@@ -1,0 +1,41 @@
+<table >
+	<thead>
+		<th>Pokemon</th>
+		<th>Attack</th>
+		<th>Defense</th>
+		<th>Stamina</th>
+		<th>Stardust</th>
+
+		<th style="width:100px; padding-left:100px">L{{customTrainerLevel}}  CP/Stardust</th>
+		<th style="width:100px">L30 CP/Stardust</th>
+		<!-- <th style="width:100px">CP, L40</th>
+	-->
+</thead>
+
+<tbody>
+	<tr>
+		<td>
+			<select #pokemon (change)="setPokemon(pokemon.value)">
+				<option *ngFor="#mon of allPokemon" [value]="mon.name">{{mon.name}}</option>
+			</select>
+		</td>
+		<td>
+			<input type="number" #attack (keyup)="setAttack(attack.value)" style="width:40px"></td>
+		<td>
+			<input type="number" #defense (keyup)="setDefense(defense.value)" style="width:40px"></td>
+		<td>
+			<input type="number" #stamina (keyup)="setStamina(stamina.value)" style="width:40px"></td>
+
+		<td>
+			<select #t (change)="setStardust(t.value)">
+				<option *ngFor="#dust of stardust" [value]="dust">{{dust}}</option>
+			</select>
+		</td>
+
+		<td style="padding-left:100px">{{pokemonResults.cpLevelCustom}} / {{pokemonResults.stardustLevelCustom}}</td>
+		<td>{{pokemonResults.cpLevel30}} / {{pokemonResults.stardustLevel30}}</td>
+		<!-- <td>{{pokemonResults.cpLevel40}}</td>
+	-->
+</tr>
+</tbody>
+</table>

@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<h1>CP & Stardust Comparator</h1>
+
+<div style="padding:30px">
+	<label>Trainer level:</label>
+	<input [(ngModel)]="customTrainerLevel"  type="number">
+</div>
+
+<pokemon-input *ngFor="#mon of [1,2,3,4,5,6]" [customTrainerLevel]="customTrainerLevel" style = "padding:30px"></pokemon-input>
